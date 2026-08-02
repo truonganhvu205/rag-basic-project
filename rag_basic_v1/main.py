@@ -88,7 +88,7 @@ rag_chain = (
     {'context': retriever, 'question': RunnablePassthrough()} | prompt | llm | StrOutputParser()
 )
 
-question = input('Question: ')
+question = input('Question: ').strip()
 answer = rag_chain.invoke(question.lower())
 
 print(answer)
