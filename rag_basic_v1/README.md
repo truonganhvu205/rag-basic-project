@@ -6,5 +6,5 @@ langchain-community \
 langchain-openai \
 langchain-core \
 faiss-cpu \
-"unstructured[pdf]"
+unstructured[pdf]
 ```
