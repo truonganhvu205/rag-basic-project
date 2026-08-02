@@ -37,7 +37,7 @@ def rag_chatbot():
     
     text_splitter = SemanticChunker(
         embeddings=OpenAIEmbeddings(),
-        breakpoint_threshold=0.85,
+        breakpoint_threshold_amount=0.85,
     )
 
     splits = text_splitter.split_documents(docs)
