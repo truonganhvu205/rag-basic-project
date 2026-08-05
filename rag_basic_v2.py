@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 
 def rag_chatbot():
     load_dotenv()
-    
+
     # LOAD DOCUMENTS
     loader = DirectoryLoader(
         path='./papers',
@@ -34,7 +34,7 @@ def rag_chatbot():
         ' ',
         '',
     ]
-    
+
     text_splitter = SemanticChunker(
         embeddings=OpenAIEmbeddings(),
         breakpoint_threshold_amount=0.85,
@@ -87,12 +87,12 @@ def rag_chatbot():
     )
 
     while True:
-        user_input = input('Question: ').strip()
-        
-        if user_input.lower() == 'exit':
+        user_input = input('Question: ').strip().lower()
+
+        if user_input == 'exit':
             print('Exiting...')
             break
-        
+
         answer = rag_chain.invoke(user_input)
         print(answer)
 
